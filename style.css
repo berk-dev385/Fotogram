@@ -1,12 +1,13 @@
 /* #region Standards:*/
-/*                          SECTION ROUTES              SEARCH-CODE                 SUFFIX                                                                                                                     */    
-/*                          main sections:              #region >>> # # #           # # #                                                                                                                      */
-/*                          routing section:            #region >>>                 <<<                                                                                                                        */
-/*                          learning section:           #region iii                 iii                                                                                                                        */
-/*                          marking question:           #region qqq                 qqq                                                                                                                        */
-/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*                          SECTION ROUTES              SEARCH-CODE                 SUFFIX                                                                                                                      */    
+/*                          main sections:              #region >>> # # #           # # #                                                                                                                       */
+/*                          routing section:            #region >>>                 <<<                                                                                                                         */
+/*                          learning section:           #region i^i                 i^i                                                                                                                         */
+/*                          marking question:           #region q<>q                q<>q                                                                                                                        */
+/*                                                                                                                                                                                                             */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-/* #region >>> # # # Central site Functions #region >>> Farben und Zentrale Maße: # # # */
+/* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> Zentrale Farb und Maßsettings: # # # */
 
 :root {
     --content-width: 1440px;     
@@ -16,7 +17,23 @@
     --text-color:   #ffffff;
     --accent-color: #fd5b4f;
 }
-/* #region iii              
+
+/* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> Zentrale Größenberechnung: # # # */
+
+* {box-sizing: border-box;
+}
+
+body{ 
+    display: flex;
+    min-height: 100vh;
+    min-height: 100svh;
+    margin: 0;
+    flex-direction: column;
+    background-color: var(--page-background);
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
 
 
 
@@ -25,5 +42,12 @@
 
 
 
-iii */
 
+
+
+
+/* #endregion >>> # # #
+
+/* #region i^i    
+
+i^i */
