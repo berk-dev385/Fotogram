@@ -28,8 +28,21 @@ const PHOTOS = [
 ]; /* #region i^i + i^i004 */
 
 
+
+/* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> Zentrale Photo Renderung: #region >>> DOM-Verbindungen und den veränderbarer Bildindex */
+ 
 const GALLERY = document.getElementById("gallery-grid");
 
+const DIALOG = document.getElementById("photo-dialog");
+const DIALOG_IMAGE = document.getElementById("dialog-image");
+const DIALOG_TITLE = document.getElementById("dialog-title");
+const PHOTO_COUNTER = document.getElementById("photo-counter");
+const CLOSE_BUTTON = document.getElementById("close-dialog");
+const PREVIOUS_BUTTON = document.getElementById("previous-photo");
+const NEXT_BUTTON = document.getElementById("next-photo");
+
+let currentIndex = 0;
+/* #region i^i + i^i017A */
 
 function renderPhoto(photo, index) {
     return `
@@ -43,15 +56,54 @@ function renderPhoto(photo, index) {
 function renderGallery() {
   GALLERY.innerHTML = PHOTOS.map((photo, index) => renderPhoto(photo, index)).join("");
 } /* #region i^i + i^i005 */
+/* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> Großansicht und Bildsteuerung Funktion #region >>> `showPhoto(index)` – Bildinhalte aktualisieren*/
+function showPhoto(index) {
+  currentIndex = index;
+  const PHOTO = PHOTOS[currentIndex];
+  DIALOG_IMAGE.src = PHOTO.src;
+  DIALOG_IMAGE.alt = PHOTO.alt;
+  DIALOG_TITLE.textContent = PHOTO.title;
+  PHOTO_COUNTER.textContent = `${currentIndex + 1}/${PHOTOS.length}`;
+}
+
+function openPhoto(index) {
+  showPhoto(index);
+  DIALOG.showModal();
+}
+
+function handleGalleryClick(event) {
+  const BUTTON = event.target.closest("[data-photo-index]");
+  if (!BUTTON) return;
+  openPhoto(Number(BUTTON.dataset.photoIndex));
+}
+
+function closePhoto() {
+  DIALOG.close();
+}
 
 
 function init() {
   renderGallery();
+  GALLERY.addEventListener("click", handleGalleryClick);
+  CLOSE_BUTTON.addEventListener("click", closePhoto);
+  PREVIOUS_BUTTON.addEventListener("click", showPreviousPhoto);
+  NEXT_BUTTON.addEventListener("click", showNextPhoto);
 }
 
 init();
 
-/* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> : # # # */
+/* #region i^i + i^i017B */
+/* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> Vorwärts- und Rückwärtsnavigation*/
+function showPreviousPhoto() {
+  const LAST_INDEX = PHOTOS.length - 1;
+  const NEW_INDEX = currentIndex === 0 ? LAST_INDEX : currentIndex - 1;
+  showPhoto(NEW_INDEX);
+}
+
+function showNextPhoto() {
+  const NEW_INDEX = (currentIndex + 1) % PHOTOS.length;
+  showPhoto(NEW_INDEX);
+} /* #region i^i + i^i018 */
 
 
 
