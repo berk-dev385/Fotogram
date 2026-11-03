@@ -9,22 +9,32 @@
 - Bildschirmrand/ Seitenabstand via `--page-gutter:` definiert
 
 `**i^i002**`
-- `border-box:` Der Browser `==zieht==` Abstände und Rahmen `==nach innen==` ab. Das Element bleibt `==exakt ... px Gesamtbreite==` Der `==Platz für==` den eigentlichen `==Inhalt schrumpft==` im Hintergrund automatisch zusammen, `==damit==` die `==Außenmaße==` perfekt `==stabil bleiben==`.
+- `border-box:` Der Browser `==zieht==` Abstände und Rahmen `==nach innen==` ab. Das Element bleibt `==exakt ... px Gesamtbreite==`. 
+  
+- Der `==Platz für==` den eigentlichen `==Inhalt schrumpft==` im Hintergrund automatisch zusammen, `==damit==` die `==Außenmaße==` perfekt `==stabil bleiben==`.
 
 `**i^i003**`
-- `svh;` steht in CSS für `==Small Viewport Height==` und entspricht `==1 %==` der kleinsten möglichen Bildschirmhöhe. Diese Einheit `==ignoriert dynamische Browser-Elemente==` wie `==sich ausblendende Adressleisten==`, sodass der Inhalt `==niemals==` unerwünscht `==abgeschnitten wird==`.
+- `svh;` steht in CSS für `==Small Viewport Height==` und entspricht `==1 %==` der kleinsten möglichen Bildschirmhöhe. 
+- Diese Einheit `==ignoriert dynamische Browser-Elemente==`, wie `==sich ausblendende Adressleisten==`, sodass der Inhalt `==niemals==` unerwünscht `==abgeschnitten wird==`.
 
 `**i^i004**`
 - Das `==Array==` trennt `==Bilddaten==´ von `HTML` und `CSS`. `src` ist der echte `==relative Pfad==`; `title` ist später die sichtbare Überschrift im Dialog; alt beschreibt das Motiv. const GALLERY verbindet JavaScript mit der leeren id="gallery-grid" aus der HTML.
 
 `**i^i005**`
 - `==renderPhoto(photo, index):==` erhält ein `Bild` und dessen `Position`; erzeugt eine anklickbare Bildvorschau und `==hält== sie ``==bereit für die Auslieferung==`. 
+  
+- `map(...):` geht das `Photo-Array` durch und erstellt pro `Photo` den `HTML-Text`.
+
+- `join(""):` verbindet die `HTML-Teile` zu einem `String` ohne `Kommata`.
 
 `**i^i006**`
 - `==<div class="gallery-grid" id="gallery-grid"></div>==` bekommt gerenderte Bilddaten von verbundener `const GALLERY = document.getElementById("gallery-grid");` sobald `function init() {renderGallery();}` ausgeführt wurde!
 
 `**i^i007**`
-- `<button>` ist absichtlich ein echter `Button`. Er kann per Tab `==fokussiert==` und mit Enter/Leertaste bedient werden.               
+- `<button>` ist absichtlich ein echter `Button`. Er kann per Tab `==fokussiert==` und mit Enter/Leertaste bedient werden.
+- `data-photo-index:` merkt sich, welches Bild der Nutzer anklickt. `==JavaScript==` `liest` diesen `Wert` später `aus`.    
+
+           
                                                                                                                                                                                                                                           
 
 
