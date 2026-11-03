@@ -194,7 +194,7 @@ body {
 } /* #region i^i + i^i014A */
 /* #region >>> GROSSANSICHT – Kopfzeile - Buttons und Tastaturfokus */
 .photo-dialog button {
-  flex-shrink: 0;die
+  flex-shrink: 0;
   border: 0;
   font: inherit;
   cursor: pointer;
