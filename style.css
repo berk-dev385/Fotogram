@@ -258,3 +258,62 @@ body {
   text-align: center;
 } /* #region i^i + i^i016 */
 
+/* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> Bereich: Mobile Ansicht: ab 320 px sinnvoll nutzbar  # # # */
+
+/* #region >>> MOBILE – eigene Umschaltgrenze */
+@media (max-width: 640px) {
+  :root {
+    --page-gutter: clamp(20px, 8vw, 30px);
+  }
+
+  .site-header__inner {
+    padding-block: 16px;
+    padding-inline: var(--page-gutter);
+  }
+
+  .gallery-section {
+    padding-block: 44px 64px;
+  }
+
+  .gallery-section h1 {
+    margin-bottom: 40px;
+    font-size: clamp(32px, 12.8vw, 48px);
+    line-height: 1;
+  }
+
+  .gallery-grid {
+    max-width: 315px;
+    column-gap: 16px;
+    row-gap: 16px;
+  }
+
+  .photo-card {
+    flex-basis: calc((100% - 16px) / 2);
+  }
+
+  .photo-dialog {
+    width: calc(100vw - 24px);
+    max-width: calc(100% - 24px);
+    padding: 24px 16px;
+    border-radius: 24px;
+  }
+
+  .photo-dialog__header h2 {
+    font-size: 20px;
+  }
+
+  .photo-dialog__media {
+    height: min(52dvh, 320px);
+    margin-block: 24px;
+  }
+
+  .photo-dialog__navigation {
+    gap: clamp(12px, 4vw, 24px);
+  }
+
+  .photo-dialog__navigation button {
+    width: 48px;
+    height: 48px;
+  } 
+} /* #region i^i + i^i019 */
+
