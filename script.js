@@ -34,16 +34,24 @@ const GALLERY = document.getElementById("gallery-grid");
 function renderPhoto(photo, index) {
     return `
   
-    <button type="button" class="photo-card" data-photo-index="${index}" aria-label="Foto öffnen: ${photo.title}">  
+    <button type="button" class="photo-card" data-photo-index="${index}" aria-label="Foto öffnen: ${photo.title}">
       <img src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async"> 
     </button>
   `;
-}
+} /* #region i^i + i^i007*/
 
 function renderGallery() {
   GALLERY.innerHTML = PHOTOS.map((photo, index) => renderPhoto(photo, index)).join("");
-}/* #region i^i + i^i005 */
+} /* #region i^i + i^i005 */
 
+
+function init() {
+  renderGallery();
+}
+
+init();
+
+/* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> : # # # */
 
 
 

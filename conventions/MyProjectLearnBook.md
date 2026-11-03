@@ -1,29 +1,30 @@
-***01.11.2026...*** ***Fortlaufende***
+# ***01.11.2026...*** ***Fortlaufende***
 
-**Lerndatenbank zum Fotogramprojekt-TMerkliste während des Projekts**
+## ´==Lerndatenbank | Fotogramprojekt- Merkliste während des Projekts zur Nacharbeitung und Verinnerlichung==´
 
 `**i^i000**`
-- `:root` legt zentrale **Variablen** an. Statt zehn Stellen muss ich später nur eine Farbe ändern.
+- `:root` legt zentrale ´==Variablen==´ an. Statt zehn Stellen muss ich später nur eine Farbe ändern.
 
 `**i^i001**`
 - Bildschirmrand/ Seitenabstand via `--page-gutter:` definiert
 
 `**i^i002**`
-- `border-box:` Der Browser zieht Abstände und Rahmen nach innen ab. Das Element bleibt exakt xxx px Gesamtbreite. Der Platz für den eigentlichen Inhalt schrumpft im Hintergrund automatisch zusammen, damit die Außenmaße perfekt stabil bleiben.
+- `border-box:` Der Browser `==zieht==` Abstände und Rahmen `==nach innen==` ab. Das Element bleibt `==exakt ... px Gesamtbreite==` Der `==Platz für==` den eigentlichen `==Inhalt schrumpft==` im Hintergrund automatisch zusammen, `==damit==` die `==Außenmaße==` perfekt `==stabil bleiben==`.
 
 `**i^i003**`
-- `svh;` steht in CSS für Small Viewport Height und entspricht 1 % der kleinsten möglichen Bildschirmhöhe. Diese Einheit ignoriert dynamische Browser-Elemente wie sich ausblendende Adressleisten, sodass der Inhalt niemals unerwünscht abgeschnitten wird.
+- `svh;` steht in CSS für `==Small Viewport Height==` und entspricht `==1 %==` der kleinsten möglichen Bildschirmhöhe. Diese Einheit `==ignoriert dynamische Browser-Elemente==` wie `==sich ausblendende Adressleisten==`, sodass der Inhalt `==niemals==` unerwünscht `==abgeschnitten wird==`.
 
 `**i^i004**`
-- Das Array trennt Bilddaten von HTML und CSS. src ist der echte relative Pfad; title ist später die sichtbare Überschrift im Dialog; alt beschreibt das Motiv. const GALLERY verbindet JavaScript mit der leeren id="gallery-grid" aus der HTML.
+- Das `==Array==` trennt `==Bilddaten==´ von `HTML` und `CSS`. `src` ist der echte `==relative Pfad==`; `title` ist später die sichtbare Überschrift im Dialog; alt beschreibt das Motiv. const GALLERY verbindet JavaScript mit der leeren id="gallery-grid" aus der HTML.
 
 `**i^i005**`
-- `renderPhoto(photo, index):` erhält ein Bild und dessen Position; erzeugt eine anklickbare Bildvorschau ud hälts sie bereit für die Auslieferung. 
+- `==renderPhoto(photo, index):==` erhält ein `Bild` und dessen `Position`; erzeugt eine anklickbare Bildvorschau und `==hält== sie ``==bereit für die Auslieferung==`. 
 
+`**i^i006**`
+- `==<div class="gallery-grid" id="gallery-grid"></div>==` bekommt gerenderte Bilddaten von verbundener `const GALLERY = document.getElementById("gallery-grid");` sobald `function init() {renderGallery();}` ausgeführt wurde!
 
-                                                                                                                                                                                                                                                          
-
-
+`**i^i007**`
+- `<button>` ist absichtlich ein echter `Button`. Er kann per Tab `==fokussiert==` und mit Enter/Leertaste bedient werden.                                                                                                                                                                                                                                                    
 
 
 
