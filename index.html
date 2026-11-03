@@ -1,75 +1,64 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fotogram- Personal Photo Album</title>
-    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
-
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotogram- Personal Photo Album</title>
+  <!-- #region >>> DOKUMENT – Favicon und Dateien einbinden -->
+  <!-- #region i^i + i^i025 -->
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <header class="site-header">
-        <div class="site-header__inner">
-            <a class="brand" href="./index.html">
-                <img src="./assets/logos/fotogram-logo.svg" alt="Fotogram">
-            </a>
-        </div>
+  <!-- #region >>> HEADER – Fotogram-Logo und Startseitenlink -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="./index.html">
+        <!-- #region i^i + i^i022 -->
+        <img src="./assets/logos/fotogram-logo.svg" alt="Fotogram">
+      </a>
+    </div>
+  </header>
 
-    </header>
+  <!-- #region >>> HAUPTINHALT – Galerie als JavaScript-Ziel -->
+  <main class="site-main" id="main-content">
+    <section class="gallery-section" aria-labelledby="gallery-title">
+      <h1 id="gallery-title">Das Odenwälder Album der Ilustrationen</h1>
+      <!-- #region i^i + i^i006 -->
+      <div class="gallery-grid" id="gallery-grid"></div>
+    </section>
+  </main>
 
+  <!-- #region >>> FOOTER – Developer-Akademie-Logo -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <!-- #region i^i + i^i022 -->
+      <img class="footer-brand" src="./assets/logos/developer_akademie_logo.svg"
+        alt="Developer Akademie – © 2023 Developer Akademie GmbH">
+    </div>
+  </footer>
 
-    <main class="site-main" id="main-content">
-        <section class="gallery-section" aria-labelledby="gallery-title">
-            <h1 id="gallery-title">Das Odenwälder Album der Ilustrationen</h1>
-            <div class="gallery-grid" id="gallery-grid"></div>
-        </section>
+  <!-- #region >>> DIALOG – Großbild, Titel und Navigation -->
+  <!-- #region i^i + i^i012 -->
+  <dialog class="photo-dialog" id="photo-dialog" aria-labelledby="dialog-title">
+    <div class="photo-dialog__content">
+      <div class="photo-dialog__header">
+        <h2 id="dialog-title">Fototitel</h2>
+        <button type="button" class="photo-dialog__close" id="close-dialog"
+          aria-label="Foto schließen">×</button>
+      </div>
 
-    </main>
+      <div class="photo-dialog__media">
+        <img class="photo-dialog__image" id="dialog-image" alt="">
+      </div>
 
-
-    <footer class="site-footer">
-        <div class="site-footer__inner">
-            <img class="footer-brand" src="./assets/logos/developer_akademie_logo.svg"alt="Developer Akademie – © 2023 Developer Akademie GmbH">
-        </div>
-
-
-    </footer>
-
-
-    <dialog class="photo-dialog" id="photo-dialog" aria-labelledby="dialog-title">
-        <div class="photo-dialog__content">
-            <div class="photo-dialog__header">
-                <h2 id="dialog-title">Fototitel</h2>
-                <button type="button" class="photo-dialog__close" id="close-dialog"
-                    aria-label="Foto schließen">×</button>
-            </div>
-
-            <div class="photo-dialog__media">
-                <img class="photo-dialog__image" id="dialog-image" alt="">
-            </div>
-
-            <div class="photo-dialog__navigation">
-                <button type="button" id="previous-photo" aria-label="Vorheriges Foto">←</button>
-                <p id="photo-counter" aria-live="polite">1/12</p>
-                <button type="button" id="next-photo" aria-label="Nächstes Foto">→</button>
-            </div>
-        </div>
-    </dialog>
-
-
-
-
-
-
-
-
-
-
-
-
+      <div class="photo-dialog__navigation">
+        <button type="button" id="previous-photo" aria-label="Vorheriges Foto">←</button>
+        <p id="photo-counter" aria-live="polite">1/12</p>
+        <button type="button" id="next-photo" aria-label="Nächstes Foto">→</button>
+      </div>
+    </div>
+  </dialog>
 </body>
-
 </html>

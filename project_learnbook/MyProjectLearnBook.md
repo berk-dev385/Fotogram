@@ -1,43 +1,59 @@
-# ***01.11.2026...*** ***Fortlaufende***
+# Fotogram – MyProjectLearnBook
 
-## ´==Lerndatenbank | Fotogramprojekt- Merkliste während des Projekts zur Nacharbeitung und Verinnerlichung==´
+Persönliches Lernbuch zum Projekt. Bestehende Erklärungen wurden übernommen; die Codeverweise sind mit `index.html`, `style.css` und `script.js` abgeglichen.
 
-`**i^i000**`
-- `:root` legt zentrale ´==Variablen==´ an. Statt zehn Stellen muss ich später nur eine Farbe ändern.
+**Kennungen:** `i^i` = Lernreferenz, `#region >>>` = Such-/Abschnittsmarkierung, `q<>q` = Frage. Keine dieser Kennungen ist eine chronologische Schrittzahl.
 
-`**i^i001**`
+**Stand:** 03.11.2026 – Aufbereitung der Coding-Konventionen. Neue Lerninhalte unter `i^i021`–`i^i028`.
+
+## Vorhandene Lernreferenzen
+
+### `i^i000` – CSS – zentrale Variablen in :root
+
+- `:root` legt zentrale `==Variablen==` an. Statt zehn Stellen muss ich später nur eine Farbe ändern.
+
+### `i^i001` – CSS – Seitenabstand
+
 - Bildschirmrand/ Seitenabstand via `--page-gutter:` definiert
 
-`**i^i002**`
+### `i^i002` – CSS – Box-Modell border-box
+
 - `border-box:` Der Browser `==zieht==` Abstände und Rahmen `==nach innen==` ab. Das Element bleibt `==exakt ... px Gesamtbreite==`. 
   
 - Der `==Platz für==` den eigentlichen `==Inhalt schrumpft==` im Hintergrund automatisch zusammen, `==damit==` die `==Außenmaße==` perfekt `==stabil bleiben==`.
 
-`**i^i003**`
+### `i^i003` – CSS – Mindesthöhe svh
+
 - `svh;` steht in CSS für `==Small Viewport Height==` und entspricht `==1 %==` der kleinsten möglichen Bildschirmhöhe. 
 - Diese Einheit `==ignoriert dynamische Browser-Elemente==`, wie `==sich ausblendende Adressleisten==`, sodass der Inhalt `==niemals==` unerwünscht `==abgeschnitten wird==`.
 
-`**i^i004**`
-- Das `==Array==` trennt `==Bilddaten==´ von `HTML` und `CSS`. `src` ist der echte `==relative Pfad==`; `title` ist später die sichtbare Überschrift im Dialog; alt beschreibt das Motiv. const GALLERY verbindet JavaScript mit der leeren id="gallery-grid" aus der HTML.
+### `i^i004` – JavaScript – PHOTOS-Array
 
-`**i^i005**`
+- Das `==Array==` trennt `==Bilddaten==` von `HTML` und `CSS`. `src` ist der echte `==relative Pfad==`; `title` ist später die sichtbare Überschrift im Dialog; alt beschreibt das Motiv. const GALLERY verbindet JavaScript mit der leeren id="gallery-grid" aus der HTML.
+
+### `i^i005` – JavaScript – Galerie rendern
+
 - `==renderPhoto(photo, index):==` erhält ein `Bild` und dessen `Position`; erzeugt eine anklickbare Bildvorschau und `==hält== sie ``==bereit für die Auslieferung==`. 
   
 - `map(...):` geht das `Photo-Array` durch und erstellt pro `Photo` den `HTML-Text`.
 
 - `join(""):` verbindet die `HTML-Teile` zu einem `String` ohne `Kommata`.
 
-`**i^i006**`
+### `i^i006` – HTML und JavaScript – Galerieverbindung
+
 - `==<div class="gallery-grid" id="gallery-grid"></div>==` bekommt gerenderte Bilddaten von verbundener `const GALLERY = document.getElementById("gallery-grid");` sobald `function init() {renderGallery();}` ausgeführt wurde!
 
-`**i^i007**`
-- `<button>` ist absichtlich ein echter `Button`. Er kann per Tab `==fokussiert==` und mit Enter/Leertaste bedient werden.
-- `data-photo-index:` merkt sich, welches Bild der Nutzer anklickt. `==JavaScript==` `liest` diesen `Wert` später `aus`.    
+### `i^i007` – JavaScript – Foto-Button und Index
 
-`**i^i008**`
+- `<button>` ist absichtlich ein echter `Button`. Er kann per Tab `==fokussiert==` und mit Enter/Leertaste bedient werden.
+- `data-photo-index:` merkt sich, welches Bild der Nutzer anklickt. `==JavaScript==` `liest` diesen `Wert` später `aus`.
+
+### `i^i008` – CSS – Variablen anwenden
+
 - „Eine CSS-Variable speichert einen wiederverwendbaren Wert; erst var(--name) verwendet diesen Wert.“
 
-`**i^i009**`
+### `i^i009` – CSS – Galerie-Flexbox
+
 - `display: flex;`       
 - Die direkten Kinder (die Foto-Buttons) werden `Flex-Elemente`
 - `width: 100%` 	    
@@ -45,30 +61,28 @@
 - `max-width: 1146px;`	Zentriert den gesamten Galerie-Container im verfügbaren Platz
 - `flex-wrap: wrap`	Falls nicht alle Bilder in eine Zeile passen, entsteht eine neue Zeile
 - `justify-content:` center	Zentriert die Bilder innerhalb jeder Zeile, auch die letzte mit fünf Bildern
-- `gap: var(A) var(B)`	Setzt zuerst den vertikalen und danach den horizontalen Abstand.                                                                                                                                                                        
+- `gap: var(A) var(B)`	Setzt zuerst den vertikalen und danach den horizontalen Abstand.
 
-`**i^i010**`
+### `i^i010` – CSS – einzelne Fotokachel
+
 - `flex:` `0` `0` `150px` bedeutet hier >>> `nicht zusätzlich wachsen`,  `nicht schrumpfen`, `Ausgangsbreite 150 px`. `aspect-ratio:` `1`; macht die `Kachel quadratisch`. `overflow:` `hidden;` hält das Bild `innerhalb` der `abgerundeten Form. `` 
 - `cursor` zeigt die `==Klickbarkeit==` `transition` bereitet eine `weiche Hover-Änderung` vor. Weil dein bestehendes `* { box-sizing: border-box; }` `==gilt==`, zählen `==Rahmen==` und `==Innenabstände==` in die `==äußere Größe=` hinein.
 
-`**i^i011**`
-- `object-fit:` cover bewahrt das Seitenverhältnis, füllt die Fläche, kann dabei an den Bildrändern etwas wegschneiden. 
+### `i^i011` – CSS – Bilder mit object-fit
 
-`**i^i011**`
-- `:hover` wirkt bei Mausberührung.`transform: translateY(-4px)` bewegt die Kachel `==optisch==` `4` `px` nach oben, `== ohne den normalen Zeilenabstand neu auszurechnen==`. 
-- `:focus-visible` zeigt den aktuell per Tastatur angewählten `Button`. 
-- `outline-offset` hält den Fokusrahmen ein Stück vom Element entfernt.
+- `object-fit:` cover bewahrt das Seitenverhältnis, füllt die Fläche, kann dabei an den Bildrändern etwas wegschneiden.
 
-`**i^i012** HTML <dialog></dialog> `
+### `i^i012` – HTML – nativer Fotodialog
+
 - Ein natives `<dialog>` ist eine vorgesehene HTML- Komponente für die Großansicht. `id`macht die Elemente später in JS auffindbar. 
 - Die Pfeile und das X sind echte Buttons. aria-label gibt einem Symbolbutton eine verständliche Beschreibung. 
 - aria-live="polite" hilft bei der später wechselnden Foto-Nummer. Das Bild hat absichtlich noch keinen src; JavaScript setzt ihn beim Öffnen.
 
 `**MERKSATZ**``== Erst lege ich in HTML das feste Gerüst an, dann gestalte ich es mit CSS, und erst danach steuert JavaScript das Öffnen und den Inhalt. ==`
-  
 
-`**i^i013**`
-### Dialog und Hintergrund (ganz wichtig)
+### `i^i013` – CSS – Dialog und Hintergrund
+
+#### Dialog und Hintergrund (ganz wichtig)
 
 - `.photo-dialog` gestaltet `==die gesamte Großansicht==`.
 - `width` und `min()` bestimmen die `==flexible Dialogbreite==`.
@@ -85,8 +99,9 @@
 - `::backdrop` gestaltet `==den Hintergrund hinter dem Dialog==`.
 - `rgb(0 0 0 / 70%)` erzeugt `==Schwarz mit 70% Deckkraft==`.
 
-`**i^i014A**`
-### Kopfzeile
+### `i^i014A` – CSS – Dialog-Kopfzeile
+
+#### Kopfzeile
 
 - `.photo-dialog__header` enthält `==Fototitel und Schließen-Button==`.
 - `display: flex` ordnet `==beide Elemente nebeneinander==`.
@@ -100,8 +115,9 @@
 - `line-height: 1` verwendet `==eine einfache Zeilenhöhe==`.
 - `overflow-wrap: anywhere` ermöglicht `==Umbrüche innerhalb langer Wörter==`.
 
-`**i^i014B**`
-### Buttons und Tastaturfokus
+### `i^i014B` – CSS – Buttons und Fokus
+
+#### Buttons und Tastaturfokus
 
 - `.photo-dialog button` gestaltet `==sämtliche Buttons im Dialog==`.
 - `flex-shrink: 0` verhindert `==das Schrumpfen der Flex-Buttons==`.
@@ -117,9 +133,9 @@
 - `transparent` erzeugt `==einen vollständig durchsichtigen Hintergrund==`.
 - `color` und `font-size` bestimmen `==X-Farbe und Schriftgröße==`.
 
+### `i^i015` – CSS – Bildfläche
 
-`**i^i015**`
-### Bildfläche
+#### Bildfläche
 
 - `.photo-dialog__media` definiert `==den Bereich des Großbildes==`.
 - `display: grid` ermöglicht `==die Zentrierung des Bildes==`.
@@ -132,8 +148,9 @@
 - `width` und `height` füllen `==den Bildbereich vollständig==`.
 - `object-fit: contain` zeigt `==das vollständige Bild ohne Beschnitt==`.
 
-`**i^i016**`
-### Navigation
+### `i^i016` – CSS – Navigation
+
+#### Navigation
 
 - `.photo-dialog__navigation` enthält `==Pfeilbuttons und Bildzähler==`.
 - `display: flex` ordnet `==alle drei Elemente nebeneinander==`.
@@ -147,16 +164,14 @@
 - `color: var(--accent-color)` bestimmt `==die Farbe der Pfeilsymbole==`.
 - `font-size: 24px` bestimmt `==die Größe der Pfeile==`.
 
-
-
 - Der Dialog ist auf Desktop bis `==688 px==` breit und hat seitlich `==64 px==` Innenabstand. 
 - Innen bleiben so etwa `==560 px==` Bildbreite. `.photo-dialog__media` bekommt eine `==feste Höhe==`. 
 - Deshalb springen die Navigationstasten später nicht bei jedem anderen Fotoformat. 
 - Mit `object-fit: contain` bleibt das ganze Motiv sichtbar, auch wenn dadurch im Bildbereich freie Fläche entsteht. 
 - `::backdrop` verdunkelt die Seite hinter dem geöffneten modalen Dialog.
 
+### `i^i017A` – JavaScript – DOM-Verbindungen
 
-`**i^i017A**` 
 - `const GALLERY = document.getElementById("gallery-grid");`
 
 - Zuerst hole ich mir das `==Haupt-Raster der Webseite==` in den Code, in dem alle `==Vorschaubilder der Galerie==` eingebettet sind.
@@ -193,11 +208,9 @@
 
 - Nachdem alle Elemente bereitstehen, lege ich eine `==veränderbare Variable==` für den `==Bildzähler==` an und starte bei `==Null==`, was in der Programmierung für das allererste Foto der Galerie steht.
 
+### `i^i017B` – JavaScript – Bildanzeige und Dialog
 
-`**i^i017B**`
-### Großansicht und Bildsteuerung Funktion #region >>> `showPhoto(index)` – Bildinhalte aktualisieren*/
-
-### Funktion `showPhoto(index)` – Bildinhalte aktualisieren
+#### Funktion `showPhoto(index)` – Bildinhalte aktualisieren
 
 - `function showPhoto(index)` definiert eine `==Funktion zur Bildanzeige==`.
 - `index` übergibt die `==Position des ausgewählten Fotos==`.
@@ -214,7 +227,7 @@
 - Das `Template Literal` verbindet beide Werte mit `/`.
 - Beispielsweise entsteht daraus die `==Bildanzeige 1/12==`.
 
-### Funktion `openPhoto(index)` – Großansicht öffnen
+#### Funktion `openPhoto(index)` – Großansicht öffnen
 
 - `function openPhoto(index)` definiert die `==Funktion zum Dialogöffnen==`.
 - `showPhoto(index)` lädt zuerst das `==gewünschte Foto==`.
@@ -223,7 +236,7 @@
 - Der `::backdrop` verdunkelt dabei den `==Seitenhintergrund==`.
 - Ein `==modaler Dialog==` blockiert die übrige Seitenbedienung.
 
-### Funktion `handleGalleryClick(event)` – Bildklick erkennen
+#### Funktion `handleGalleryClick(event)` – Bildklick erkennen
 
 - `function handleGalleryClick(event)` verarbeitet `==Klickereignisse innerhalb der Galerie==`.
 - `event` enthält Informationen über das `==ausgelöste Klickereignis==`.
@@ -239,14 +252,14 @@
 - `Number()` wandelt den `==ausgelesenen Text in eine Zahl==`.
 - `openPhoto(...)` öffnet das `==Foto mit dieser Bildposition==`.
 
-### Funktion `closePhoto()` – Großansicht schließen
+#### Funktion `closePhoto()` – Großansicht schließen
 
 - `function closePhoto()` definiert die `==Funktion zum Dialogschließen==`.
 - `DIALOG.close()` schließt den `==aktuell geöffneten HTML-Dialog==`.
 - Danach wird die `==normale Galerieansicht wieder bedienbar==`.
 - Das Fotoarray bleibt dabei `==vollständig und unverändert erhalten==`.
 
-### Funktion `init()` – Galerie und Ereignisse verbinden
+#### Funktion `init()` – Galerie und Ereignisse verbinden
 
 - `function init()` definiert die `==zentrale Startfunktion der Anwendung==`.
 - `renderGallery()` erzeugt die `==Vorschaubilder aus dem Fotoarray==`.
@@ -261,14 +274,14 @@
 - `showNextPhoto` soll das `==nächste Foto anzeigen==`.
 - `addEventListener()` verbindet damit `==Benutzeraktionen und JavaScript-Funktionen==`.
 
-### Aufruf `init();` – Anwendung starten
+#### Aufruf `init();` – Anwendung starten
 
 - `init();` ruft die `==zuvor definierte Startfunktion==` auf.
 - Dadurch beginnt das `==dynamische Rendern der Galerie==`.
 - Anschließend werden die `==vier Klickereignisse registriert==`.
 - Die Anwendung kann danach `==auf Benutzeraktionen reagieren==`.
 
-### Zusammenspiel der Funktionen
+#### Zusammenspiel der Funktionen
 
 - `init()` bereitet die `==Galerie und Ereignissteuerung==` vor.
 - `handleGalleryClick()` erkennt das `==vom Besucher gewählte Vorschaubild==`.
@@ -277,7 +290,7 @@
 - `showModal()` zeigt anschließend die `==fertig vorbereitete Großansicht==`.
 - `closePhoto()` beendet die `==Darstellung des geöffneten Dialogs==`.
 
-### Wichtige Unterscheidungen
+#### Wichtige Unterscheidungen
 
 - `showPhoto()` aktualisiert Inhalte, `==öffnet aber keinen Dialog==`.
 - `openPhoto()` verbindet `==Bildaktualisierung und anschließendes Dialogöffnen==`.
@@ -289,13 +302,11 @@
 - `showPreviousPhoto()` und `showNextPhoto()` werden hier `==nur aufgerufen==`.
 - Ihre `==Funktionsdefinitionen==` sind im gezeigten Ausschnitt nicht enthalten.
 
+### `i^i018` – JavaScript – Vor- und Zurücknavigation
 
+#### Vorwärts- und Rückwärtsnavigation
 
-
-`**i^i018**`
-### Vorwärts- und Rückwärtsnavigation
-
-### Funktion `showPreviousPhoto()` – Vorheriges Foto anzeigen
+#### Funktion `showPreviousPhoto()` – Vorheriges Foto anzeigen
 
 - `function showPreviousPhoto()` definiert die `==Funktion zum Zurückblättern==`.
 - `const LAST_INDEX` speichert die `==letzte gültige Arrayposition==`.
@@ -311,7 +322,7 @@
 - `showPhoto(NEW_INDEX)` aktualisiert anschließend das `==angezeigte Foto==`.
 - Dadurch entsteht eine `==Rundum-Navigation zum letzten Foto==`.
 
-### Funktion `showNextPhoto()` – Nächstes Foto anzeigen
+#### Funktion `showNextPhoto()` – Nächstes Foto anzeigen
 
 - `function showNextPhoto()` definiert die `==Funktion zum Weiterblättern==`.
 - `const NEW_INDEX` speichert die `==nächste berechnete Bildposition==`.
@@ -324,7 +335,7 @@
 - `showPhoto(NEW_INDEX)` zeigt anschließend das `==nächste berechnete Foto==`.
 - Dadurch entsteht eine `==Rundum-Navigation zum ersten Foto==`.
 
-### Beispiel – Navigation mit zwölf Fotos
+#### Beispiel – Navigation mit zwölf Fotos
 
 - `PHOTOS.length` ergibt bei zwölf Bildern den `==Wert 12==`.
 - Das erste Foto besitzt den `==Arrayindex 0==`.
@@ -333,7 +344,7 @@
 - `showNextPhoto()` wechselt von `==Index 11 zu 0==`.
 - Alle anderen Positionen werden `==schrittweise vorwärts oder rückwärts==` durchlaufen.
 
-### Funktion `init()` – Vorhandene Startfunktion ersetzen
+#### Funktion `init()` – Vorhandene Startfunktion ersetzen
 
 - Die bisherige `init()` wird `==vollständig durch diese Version ersetzt==`.
 - `function init()` definiert die `==zentrale Startfunktion unserer Galerie==`.
@@ -349,7 +360,7 @@
 - `showNextPhoto` wird dadurch `==beim Weiterklicken automatisch ausgeführt==`.
 - `addEventListener()` verbindet `==HTML-Elemente mit ihren JavaScript-Funktionen==`.
 
-### Aufruf `init();` – Anwendung starten
+#### Aufruf `init();` – Anwendung starten
 
 - `init();` führt die `==zuvor definierte Startfunktion==` aus.
 - `renderGallery()` erstellt dabei die `==dynamische Bildergalerie==`.
@@ -357,7 +368,7 @@
 - Die Funktion `init()` darf `==nur einmal definiert werden==`.
 - Auch der Aufruf `init();` bleibt `==nur einmal vorhanden==`.
 
-### Zusammenspiel – Vollständige Bildnavigation
+#### Zusammenspiel – Vollständige Bildnavigation
 
 - `init()` verbindet die `==Buttons mit ihren Ereignisfunktionen==`.
 - `showPreviousPhoto()` berechnet die `==vorherige gültige Bildposition==`.
@@ -372,11 +383,11 @@
 - Die Thumbnails sind echte Buttons. Deshalb kann man sie auch ohne Maus bedienen. 
 - Der native Dialog übernimmt einen Teil des Tastaturverhaltens
 
-`**i^i019**`
+### `i^i019` – CSS – responsives Design
 
-### Responsive Mobile-Ansicht ab 320 px nutzbar
+#### Responsive Mobile-Ansicht ab 320 px nutzbar
 
-### Media Query – Mobile Umschaltgrenze
+#### Media Query – Mobile Umschaltgrenze
 
 - `@media` definiert `==CSS-Regeln für bestimmte Bildschirmbedingungen==`.
 - `max-width: 640px` aktiviert die Regeln bei `==höchstens 640px Fensterbreite==`.
@@ -384,7 +395,7 @@
 - Größere Fenster verwenden weiterhin die `==allgemeinen CSS-Regeln==`.
 - `640px` ist eine `==selbst festgelegte technische Umschaltgrenze==`.
 
-### `:root` – Flexible Seitenabstände
+#### `:root` – Flexible Seitenabstände
 
 - `:root` enthält die `==zentral definierten CSS-Variablen==`.
 - `--page-gutter` bestimmt den `==seitlichen Abstand zum Seitenrand==`.
@@ -394,7 +405,7 @@
 - `30px` definiert den `==größten erlaubten Seitenabstand==`.
 - `clamp(20px, 8vw, 30px)` hält den Abstand `==zwischen 20 und 30 Pixel==`.
 
-### `.site-header__inner` – Mobiler Header
+#### `.site-header__inner` – Mobiler Header
 
 - `.site-header__inner` gestaltet den `==inneren Bereich des Headers==`.
 - `padding-block: 16px` erzeugt `==16px Innenabstand oben und unten==`.
@@ -402,7 +413,7 @@
 - `var(--page-gutter)` übernimmt den `==flexibel berechneten Seitenabstand==`.
 - Der Header passt sich dadurch `==schmaleren Bildschirmbreiten==` an.
 
-### `.gallery-section` – Mobiler Galeriebereich
+#### `.gallery-section` – Mobiler Galeriebereich
 
 - `.gallery-section` gestaltet den `==gesamten Bereich der Fotogalerie==`.
 - `padding-block` bestimmt die `==vertikalen Innenabstände des Bereichs==`.
@@ -410,7 +421,7 @@
 - `64px` erzeugt den `==unteren Innenabstand der Galerie==`.
 - Beide Werte schaffen `==Platz für Überschrift und Bilder==`.
 
-### `.gallery-section h1` – Mobile Hauptüberschrift
+#### `.gallery-section h1` – Mobile Hauptüberschrift
 
 - `.gallery-section h1` gestaltet die `==Hauptüberschrift innerhalb der Galerie==`.
 - `margin-bottom: 40px` erzeugt `==40px Abstand unter der Überschrift==`.
@@ -422,7 +433,7 @@
 - `line-height: 1` verwendet die `==einfache Schriftgröße als Zeilenhöhe==`.
 - Dadurch bleibt die Überschrift `==auf kleinen Bildschirmen anpassbar==`.
 
-### `.gallery-grid` – Mobiles Galerieraster
+#### `.gallery-grid` – Mobiles Galerieraster
 
 - `.gallery-grid` gestaltet die `==Anordnung aller Vorschaubilder==`.
 - `max-width: 315px` begrenzt die `==maximale Breite der Bildgalerie==`.
@@ -430,7 +441,7 @@
 - `row-gap: 16px` erzeugt `==vertikalen Abstand zwischen Bildreihen==`.
 - Die Bilder bleiben innerhalb des `==verfügbaren Galeriecontainers==`.
 
-### `.photo-card` – Zwei Bildspalten
+#### `.photo-card` – Zwei Bildspalten
 
 - `.photo-card` gestaltet die `==einzelnen Vorschaubilder der Galerie==`.
 - `flex-basis` bestimmt die `==Ausgangsgröße eines Flex-Elements==`.
@@ -441,7 +452,7 @@
 - `calc((100% - 16px) / 2)` erzeugt `==zwei gleich breite Bildspalten==`.
 - Die Kacheln können dadurch `==kleiner als 150px werden==`.
 
-### `.photo-dialog` – Mobiler Dialog
+#### `.photo-dialog` – Mobiler Dialog
 
 - `.photo-dialog` gestaltet die `==Großansicht auf kleinen Bildschirmen==`.
 - `width` bestimmt die `==gewünschte Breite des Dialogs==`.
@@ -455,13 +466,13 @@
 - `border-radius: 24px` erzeugt `==abgerundete Ecken am Dialog==`.
 - Der Dialog erhält dadurch `==kleinere Abstände als auf Desktop==`.
 
-### `.photo-dialog__header h2` – Mobiler Fototitel
+#### `.photo-dialog__header h2` – Mobiler Fototitel
 
 - `.photo-dialog__header h2` gestaltet den `==Fototitel der Großansicht==`.
 - `font-size: 20px` setzt die `==Schriftgröße auf 20 Pixel==`.
 - Der Fototitel benötigt dadurch `==weniger Platz im Dialog==`.
 
-### `.photo-dialog__media` – Mobile Bildfläche
+#### `.photo-dialog__media` – Mobile Bildfläche
 
 - `.photo-dialog__media` definiert den `==Bereich für das Großbild==`.
 - `height` bestimmt die `==Höhe der mobilen Bildfläche==`.
@@ -473,7 +484,7 @@
 - `margin-block: 24px` erzeugt `==Außenabstände oberhalb und unterhalb==`.
 - Die Bildfläche passt sich dadurch `==niedrigeren Bildschirmhöhen==` an.
 
-### `.photo-dialog__navigation` – Mobile Navigation
+#### `.photo-dialog__navigation` – Mobile Navigation
 
 - `.photo-dialog__navigation` gestaltet die `==Navigationsleiste unter dem Foto==`.
 - `gap` bestimmt die `==Abstände zwischen den Navigationselementen==`.
@@ -483,7 +494,7 @@
 - `24px` definiert den `==größten erlaubten Abstand==`.
 - Die Navigation benötigt dadurch `==weniger Platz auf Smartphones==`.
 
-### `.photo-dialog__navigation button` – Mobile Pfeilbuttons
+#### `.photo-dialog__navigation button` – Mobile Pfeilbuttons
 
 - `.photo-dialog__navigation button` gestaltet die `==Pfeilbuttons der Großansicht==`.
 - `width: 48px` definiert die `==Breite eines Navigationsbuttons==`.
@@ -491,7 +502,7 @@
 - Zusammen entsteht eine `==quadratische Buttonfläche mit 48px Seitenlänge==`.
 - Die Buttons bleiben dadurch `==kleiner als auf Desktop==`.
 
-### Zusammenspiel – Responsive Darstellung
+#### Zusammenspiel – Responsive Darstellung
 
 - `@media` aktiviert die `==mobilen Anpassungen bis 640px==`.
 - `clamp()` begrenzt `==flexibel wachsende Abstände und Schriftgrößen==`.
@@ -502,7 +513,7 @@
 - Die allgemeinen Desktopregeln werden `==durch gezielte Mobilregeln überschrieben==`.
 
 `**MERKSATZ**`
-### Responsive Design – Mobile Ansicht - Wichtige Fakten
+#### Responsive Design – Mobile Ansicht - Wichtige Fakten
 
 - `@media (max-width: 640px)` aktiviert die darin stehenden Änderungen für schmale Browserfenster.
 - `clamp(minimum, flexibel, maximum)` begrenzt einen mitwachsenden Wert.
@@ -511,129 +522,90 @@
 - `dvh` berücksichtigt die aktuelle dynamische Fensterhöhe – wichtig für den Dialog.
 - Die 640-px-Umschaltgrenze ist eine `==eigene technische Entscheidung==`, kein Figma-Mobile-Frame.
 
-`**i^i020**`
+### `i^i020` – CSS – stabile Höhe der Dialog-Titelzeile
+
 - `min-height` `reserviert` Platz für die Titelzeile. Auf `Desktop` genügen bei den aktuellen Titeln `48 px`, 
 - `==mobil==` bis zu 60 px für dreizeilige Titel. 
 - Dadurch bleibt die nachfolgende feste Bildzone samt Navigationsbuttons auf einer stabileren Position. 
 - Der Dialog darf bei niedriger Fensterhöhe weiterhin scrollen.
 
+## Neue Lernreferenzen – Konventionen und letzte Gestaltung
 
+### `i^i021` – CSS – lokale Figtree-Schrift
 
+- `@font-face` registriert `==lokale Schriftdateien==` im Browser.
+- `src` verweist auf die Schriftdateien in `assets/fonts/`.
+- `font-weight` unterscheidet `==400, 500, 700 und 800==`.
+- `font-family: "Figtree"` verwendet die `==registrierte Schrift==`.
+- `Arial` und `Helvetica` bleiben als `==Ersatzschriften==` erhalten.
 
+### `i^i022` – HTML/CSS – SVG-Logos
 
+- `<img>` bindet die `==festen SVG-Logos==` direkt ein.
+- `assets/logos/` enthält `==Header- und Footer-Logo==`.
+- Das Header-Logo bleibt `==ein Link zur Startseite==`.
+- `.brand img` begrenzt `==Breite und Seitenverhältnis==`.
+- JavaScript-Rendering ist für `==statische Logos==` nicht notwendig.
 
+### `i^i023` – CSS – geschwungene Footer-Oberkante
 
+- `.site-footer` erhält mit `position: relative` einen `==Bezugspunkt==`.
+- `::before` erzeugt eine `==zusätzliche dekorative Fläche==`.
+- `bottom` positioniert sie `==oberhalb des Footers==`.
+- `border-radius` formt die `==sanfte Rundung der Oberkante==`.
+- `pointer-events: none` verhindert `==blockierte Mausaktionen==`.
 
+### `i^i024` – CSS – Hover und Tastaturfokus
 
+- `:hover` wirkt bei Mausberührung.`transform: translateY(-4px)` bewegt die Kachel `==optisch==` `4` `px` nach oben, `== ohne den normalen Zeilenabstand neu auszurechnen==`. 
+- `:focus-visible` zeigt den aktuell per Tastatur angewählten `Button`. 
+- `outline-offset` hält den Fokusrahmen ein Stück vom Element entfernt.
 
+- `:hover` steht für `==Mauskontakt mit einer Bildkachel==`.
+- `transform` hebt die `==Kachel optisch nach oben==`.
+- `border-color` verwendet die `==Akzentfarbe des Designs==`.
+- `focus-visible` kennzeichnet `==den aktuell fokussierten Button==`.
+- `outline` und `outline-offset` zeigen `==einen sichtbaren Fokusrahmen==`.
 
+### `i^i025` – HTML – Favicon im Browser-Tab
 
+- `<link rel="icon">` meldet dem Browser `==das Seitensymbol==`.
+- `type="image/svg+xml"` kennzeichnet `==die SVG-Datei==`.
+- `href` zeigt auf `==assets/icons/favicon.svg==`.
+- Das Favicon gehört `==in den HTML-head==`.
 
+### `i^i026` – JavaScript – JSDoc über Funktionen
 
+- `/**` beginnt `==den Dokumentationskommentar einer Funktion==`.
+- `*/` beendet `==den Kommentar direkt vor der Funktion==`.
+- `@param` erklärt `==übergebene Werte und ihre Bedeutung==`.
+- `@returns` beschreibt `==den zurückgegebenen Wert==`.
+- JSDoc dokumentiert Code, `==ändert aber keine Ausführung==`.
 
+### `i^i027` – JavaScript – Event Delegation beim Galerieklick
 
+- `GALLERY.addEventListener()` überwacht `==alle Foto-Buttons gemeinsam==`.
+- `event.target` benennt `==das angeklickte Element==`.
+- `.closest()` findet `==den passenden umgebenden Bildbutton==`.
+- `dataset.photoIndex` liest `==die gespeicherte Bildposition==`.
+- `Number()` macht daraus `==einen verwendbaren Zahlenindex==`.
 
+### `i^i028` – JavaScript – einmaliger Start am Dateiende
 
+- `init()` verbindet `==Galerie-Rendering und Klickereignisse==`.
+- `init();` steht `==einmal am Ende==` von `script.js`.
+- Funktionsdeklarationen liegen `==vor dem abschließenden Aufruf==`.
+- Eine zweite `init()` würde `==unnötige Dopplung==` verursachen.
+- Verschoben wurde `==nur der Startaufruf, keine Programmlogik==`.
 
+## Reservemagazin
 
+`i^i020` ist bereits belegt. `i^i021` bis `i^i028` sind jetzt ebenfalls erklärt und mit Code verknüpft.
 
+**Nächste freie Lernkennung:** `i^i029` (nur bei tatsächlichem neuen Lernthema verwenden).
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-Next learning Code: 
-
-
-
-
-
-`**i^i020**`
-
-`**i^i021**`
-
-`**i^i022**`
-
-`**i^i023**`
-
-`**i^i024**`
-
-`**i^i025**`
-
-`**i^i026**`
-
-`**i^i027**`
-
-`**i^i028**`
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 ## 🛠️ Markdown-Spickzettel (Cheat Sheet)
 
 | Element             | Markdown-Befehl                                                                  | Ergebnis / Vorschau                   |
@@ -669,31 +641,3 @@ Next learning Code:
 | :--------------- | :-------------: | ----------------: |
 | Text steht links | Text ist mittig | Text steht rechts |
 | Spalte 1         |    Spalte 2     |          Spalte 3 |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
