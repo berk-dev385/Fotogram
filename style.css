@@ -319,7 +319,7 @@ body {
 /* #region >>> MOBILE – eigene Umschaltgrenze */
 @media (max-width: 640px) {
   :root {
-    --page-gutter: clamp(20px, 8vw, 30px);
+  --page-gutter: clamp(20px, 8vw, 30px);
   }
 
   .site-header__inner {
