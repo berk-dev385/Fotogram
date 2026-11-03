@@ -374,7 +374,7 @@
 
 `**i^i019**`
 
-### Responsive Mobile-Ansicht
+### Responsive Mobile-Ansicht ab 320 px nutzbar
 
 ### Media Query – Mobile Umschaltgrenze
 
@@ -502,7 +502,7 @@
 - Die allgemeinen Desktopregeln werden `==durch gezielte Mobilregeln überschrieben==`.
 
 `**MERKSATZ**`
-### Responsive Design – Mobile Ansicht
+### Responsive Design – Mobile Ansicht - Wichtige Fakten
 
 - `@media (max-width: 640px)` aktiviert die darin stehenden Änderungen für schmale Browserfenster.
 - `clamp(minimum, flexibel, maximum)` begrenzt einen mitwachsenden Wert.
