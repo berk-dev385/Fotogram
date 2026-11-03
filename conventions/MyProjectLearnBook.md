@@ -511,6 +511,13 @@
 - `dvh` berücksichtigt die aktuelle dynamische Fensterhöhe – wichtig für den Dialog.
 - Die 640-px-Umschaltgrenze ist eine `==eigene technische Entscheidung==`, kein Figma-Mobile-Frame.
 
+`**i^i020**`
+- `min-height` `reserviert` Platz für die Titelzeile. Auf `Desktop` genügen bei den aktuellen Titeln `48 px`, 
+- `==mobil==` bis zu 60 px für dreizeilige Titel. 
+- Dadurch bleibt die nachfolgende feste Bildzone samt Navigationsbuttons auf einer stabileren Position. 
+- Der Dialog darf bei niedriger Fensterhöhe weiterhin scrollen.
+
+
 
 
 
