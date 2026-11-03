@@ -21,7 +21,11 @@
     --surface-color: #09212a;
     --text-color: #ffffff;
     --accent-color: #fd5b4f;
-}
+    --thumbnail-size: 150px;
+    --thumbnail-radius: 16px;
+    --gallery-column-gap: 16px;
+    --gallery-row-gap: 48px;
+} /* #region i^i + i^i008 */
 
 /* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> Zentrale Größenberechnung: # # # */
 
@@ -34,7 +38,7 @@ body {
     display: flex;
     min-height: 100vh;
     min-height: 100svh;
-    /*#region i^i + i^i003 */ 
+    /*#region i^i + i^i003 */
     margin: 0;
     flex-direction: column;
     background-color: var(--page-background);
@@ -64,7 +68,7 @@ body {
 
 .site-header__inner {
     display: flex;
-    min-height: 81px;    
+    min-height: 81px;
     align-items: center;
     padding-block: 20px;
     padding-inline: clamp(24px, 9.72vw, 140px);
@@ -72,7 +76,7 @@ body {
 
 .brand {
     color: var(--text-color);
-    font-size: 26px;    
+    font-size: 26px;
     font-weight: 800;
     text-decoration: none;
 }
@@ -82,12 +86,12 @@ body {
 }
 
 .gallery-section {
-    padding-block: 140px 96px;    
+    padding-block: 140px 96px;
     text-align: center;
 }
 
 .gallery-section h1 {
-    margin: 0 0 72px;    
+    margin: 0 0 72px;
     font-size: clamp(32px, 4vw, 56px);
     font-weight: 800;
     line-height: 1;
@@ -96,7 +100,7 @@ body {
 
 .site-footer__inner {
     display: flex;
-    min-height: 128px;    
+    min-height: 128px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -108,16 +112,149 @@ body {
     margin: 8px 0;
 }
 
+/* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> Bereich für Bildanordnung in der Galerie  # # # */
+
+/* #region >>> GALERIE – Container mit Flexbox zur Formation der Bilder */ 
+.gallery-grid {
+  display: flex;
+  width: 100%;
+  max-width: 1146px;
+  margin-inline: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gallery-row-gap) var(--gallery-column-gap);
+} /* #region i^i + i^i009 */
+
+/* #region >>> GALERIE – einzelne Bildkacheln */
+.photo-card {
+  display: block;
+  flex: 0 0 var(--thumbnail-size);
+  aspect-ratio: 1;
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid #124658;
+  border-radius: var(--thumbnail-radius);
+  background: transparent;
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease;
+} /* #region i^i + i^i010 */
+
+/* #region >>> GALERIE – Bilder füllen die Kacheln aus */
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} /* #region i^i + i^i011 */
+
+/* #region >>> GALERIE – Maus und Tastatur */
+.photo-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color);
+}
+
+.photo-card:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+} /* #region i^i + i^i012 */
+
+/* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> Bereich: Dialoggestaltung | Bild- und Navigations- Bereichsanordnung  # # # */
+
+/* #region >>> GROSSANSICHT – Dialog und Hintergrund */
+.photo-dialog {
+  width: min(688px, calc(100vw - 32px));
+  max-width: calc(100% - 32px);
+  max-height: calc(100dvh - 32px);
+  padding: 56px 64px;
+  overflow-y: auto;
+  border: 0;
+  border-radius: 40px;
+  background-color: var(--surface-color);
+  color: var(--text-color);
+} 
+.photo-dialog::backdrop {
+  background-color: rgb(0 0 0 / 70%);
+  }/* #region i^i + i^i013 */
 
 
+/* #region >>> GROSSANSICHT – Kopfzeile */
+.photo-dialog__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
 
+.photo-dialog__header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  overflow-wrap: anywhere;
+} /* #region i^i + i^i014A */
+/* #region >>> GROSSANSICHT – Kopfzeile - Buttons und Tastaturfokus */
+.photo-dialog button {
+  flex-shrink: 0;die
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
 
+.photo-dialog button:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
 
+.photo-dialog .photo-dialog__close {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background-color: transparent;
+  color: var(--text-color);
+  font-size: 24px;
+} /* #region i^i + i^i014B */
 
+/* #region >>> GROSSANSICHT – Bildfläche */
+.photo-dialog__media {
+  display: grid;
+  width: 100%;
+  height: 374.71px;
+  margin-block: 48px;
+  place-items: center;
+}
 
+.photo-dialog__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}/* #region i^i + i^i015 */
 
+/* #region >>> GROSSANSICHT – Navigation */
+.photo-dialog__navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+}
 
+.photo-dialog__navigation button {
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border-radius: 100px;
+  background-color: rgb(253 91 79 / 10%);
+  color: var(--accent-color);
+  font-size: 24px;
+}
 
-
-
+.photo-dialog__navigation p {
+  min-width: 29px;
+  margin: 0;
+  color: #f5f5f5;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: center;
+} /* #region i^i + i^i016 */
 
