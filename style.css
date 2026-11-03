@@ -1,120 +1,165 @@
-/*#region >>>/* #region Standards:*/
-/*                          SECTION ROUTES              SEARCH-CODE                 BUILD-CODE                          */
-/*                          main sections:              #region >>> # # #           /* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> BEREICH/ UNTERBEREICH # # # */
-/*                          routing section:            #region >>>                 /* #region >>>*/
-/*                          learning section:           #region i^i                 /* #region i^i + i^i000 */
-/*                          marking question:           #region q<>q                /* #region q<>q + q^q100 */
-/*                                                                                               */
-/*                                                                                               */
-/*                                                                                               */
-/*                                                                                               */
-/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* #region i^i + i^i021 */
+@font-face {
+  font-family: "Figtree";
+  src: url("./assets/fonts/figtree-v9-latin-regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
 
-/* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> Zentrale Farb und Maßsettings: # # # */
+@font-face {
+  font-family: "Figtree";
+  src: url("./assets/fonts/figtree-v9-latin-500.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
 
+@font-face {
+  font-family: "Figtree";
+  src: url("./assets/fonts/figtree-v9-latin-700.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("./assets/fonts/figtree-v9-latin-800.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 800;
+}
+
+/* #region >>> # # # BASIS – Farben, Maße und Variablen # # # */
+/* #region i^i + i^i000 */
 :root {
-    /*#region i^i + i^i000 */
-    --content-width: 1440px;
-    --page-gutter: 24px;
-    /*#region i^i + i^i001 */
-    --page-background: #06171e;
-    --surface-color: #09212a;
-    --text-color: #ffffff;
-    --accent-color: #fd5b4f;
-    --thumbnail-size: 150px;
-    --thumbnail-radius: 16px;
-    --gallery-column-gap: 16px;
-    --gallery-row-gap: 48px;
-} /* #region i^i + i^i008 */
+  --content-width: 1440px;
+  /* #region i^i + i^i001 */
+  --page-gutter: 24px;
+  --page-background: #06171e;
+  --surface-color: #09212a;
+  --text-color: #ffffff;
+  --accent-color: #fd5b4f;
+  /* #region i^i + i^i008 */
+  --thumbnail-size: 150px;
+  --thumbnail-radius: 16px;
+  --gallery-column-gap: 16px;
+  --gallery-row-gap: 48px;
+}
 
-/* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> Zentrale Größenberechnung: # # # */
+/* #region >>> # # # BASIS – Box-Modell und Seitenaufbau # # # */
 
+/* #region i^i + i^i002 */
 * {
-    box-sizing: border-box;
-    /* #region i^i + i^i002 */
+  box-sizing: border-box;
 }
 
+/* #region i^i + i^i003 */
 body {
-    display: flex;
-    min-height: 100vh;
-    min-height: 100svh;
-    /*#region i^i + i^i003 */
-    margin: 0;
-    flex-direction: column;
-    background-color: var(--page-background);
-    color: var(--text-color);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+  display: flex;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin: 0;
+  flex-direction: column;
+  background-color: var(--page-background);
+  color: var(--text-color);
+  font-family: "Figtree", Arial, Helvetica, sans-serif;
+  font-size: 16px;
 }
 
-/* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> Bereiche über dem Bildschirmrand volle Seitenbreite: # # # */
+/* #region >>> # # # LAYOUT – vollbreiter Header und Footer # # # */
 
 .site-header,
 .site-footer {
-    width: 100%;
-    background-color: var(--surface-color);
+  width: 100%;
+  background-color: var(--surface-color);
 }
 
-/* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> Bereiche mit Inhaltszentrierung: # # # */
+/* #region >>> FOOTER – geschwungene Oberkante */
+
+.site-footer {
+  position: relative;
+}
+
+/* #region i^i + i^i023 */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100% - 1px);
+  left: 0;
+  width: 100%;
+  height: 26px;
+  background-color: var(--surface-color);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  pointer-events: none;
+}
+
+/* #region >>> # # # LAYOUT – zentrierte Inhaltsbereiche # # # */
 
 .site-header__inner,
 .site-footer__inner,
 .gallery-section {
-    width: 100%;
-    max-width: var(--content-width);
-    margin-inline: auto;
-    padding-inline: var(--page-gutter);
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
 }
 
 .site-header__inner {
-    display: flex;
-    min-height: 81px;
-    align-items: center;
-    padding-block: 20px;
-    padding-inline: clamp(24px, 9.72vw, 140px);
+  display: flex;
+  min-height: 81px;
+  align-items: center;
+  padding-block: 20px;
+  padding-inline: clamp(24px, 9.72vw, 140px);
 }
 
 .brand {
-    color: var(--text-color);
-    font-size: 26px;
-    font-weight: 800;
-    text-decoration: none;
+  color: var(--text-color);
+  font-size: 26px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* #region i^i + i^i022 */
+.brand img {
+  display: block;
+  width: 216px;
+  max-width: 100%;
+  height: auto;
 }
 
 .site-main {
-    flex: 1;
+  flex: 1;
 }
 
 .gallery-section {
-    padding-block: 140px 96px;
-    text-align: center;
+  padding-block: 140px 96px;
+  text-align: center;
 }
 
 .gallery-section h1 {
-    margin: 0 0 72px;
-    font-size: clamp(32px, 4vw, 56px);
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: 0;
+  margin: 0 0 72px;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
 }
 
 .site-footer__inner {
-    display: flex;
-    min-height: 128px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-block: 20px;
-    text-align: center;
+  display: flex;
+  min-height: 128px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-block: 20px;
+  text-align: center;
 }
 
 .site-footer p {
-    margin: 8px 0;
+  margin: 8px 0;
 }
 
-/* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> Bereich für Bildanordnung in der Galerie  # # # */
+/* #region >>> # # # GALERIE – Anordnung der Vorschaubilder # # # */
 
-/* #region >>> GALERIE – Container mit Flexbox zur Formation der Bilder */ 
+/* #region >>> GALERIE – Container mit Flexbox zur Formation der Bilder */
+/* #region i^i + i^i009 */
 .gallery-grid {
   display: flex;
   width: 100%;
@@ -123,9 +168,10 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--gallery-row-gap) var(--gallery-column-gap);
-} /* #region i^i + i^i009 */
+}
 
 /* #region >>> GALERIE – einzelne Bildkacheln */
+/* #region i^i + i^i010 */
 .photo-card {
   display: block;
   flex: 0 0 var(--thumbnail-size);
@@ -137,17 +183,19 @@ body {
   background: transparent;
   cursor: pointer;
   transition: transform 160ms ease, border-color 160ms ease;
-} /* #region i^i + i^i010 */
+}
 
 /* #region >>> GALERIE – Bilder füllen die Kacheln aus */
+/* #region i^i + i^i011 */
 .photo-card img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-} /* #region i^i + i^i011 */
+}
 
 /* #region >>> GALERIE – Maus und Tastatur */
+/* #region i^i + i^i024 */
 .photo-card:hover {
   transform: translateY(-4px);
   border-color: var(--accent-color);
@@ -156,11 +204,12 @@ body {
 .photo-card:focus-visible {
   outline: 3px solid var(--accent-color);
   outline-offset: 3px;
-} /* #region i^i + i^i012 */
+}
 
-/* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> Bereich: Dialoggestaltung | Bild- und Navigations- Bereichsanordnung  # # # */
+/* #region >>> # # # GROSSANSICHT – Dialoggestaltung und Navigation # # # */
 
 /* #region >>> GROSSANSICHT – Dialog und Hintergrund */
+/* #region i^i + i^i013 */
 .photo-dialog {
   width: min(688px, calc(100vw - 32px));
   max-width: calc(100% - 32px);
@@ -171,18 +220,21 @@ body {
   border-radius: 40px;
   background-color: var(--surface-color);
   color: var(--text-color);
-} 
+}
+
 .photo-dialog::backdrop {
   background-color: rgb(0 0 0 / 70%);
-  }/* #region i^i + i^i013 */
-
+}
 
 /* #region >>> GROSSANSICHT – Kopfzeile */
+/* #region i^i + i^i014A */
 .photo-dialog__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  /* #region i^i + i^i020 */
+  min-height: 48px;
 }
 
 .photo-dialog__header h2 {
@@ -191,8 +243,10 @@ body {
   font-weight: 700;
   line-height: 1;
   overflow-wrap: anywhere;
-} /* #region i^i + i^i014A */
+}
+
 /* #region >>> GROSSANSICHT – Kopfzeile - Buttons und Tastaturfokus */
+/* #region i^i + i^i014B */
 .photo-dialog button {
   flex-shrink: 0;
   border: 0;
@@ -212,9 +266,10 @@ body {
   background-color: transparent;
   color: var(--text-color);
   font-size: 24px;
-} /* #region i^i + i^i014B */
+}
 
 /* #region >>> GROSSANSICHT – Bildfläche */
+/* #region i^i + i^i015 */
 .photo-dialog__media {
   display: grid;
   width: 100%;
@@ -228,9 +283,10 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
-}/* #region i^i + i^i015 */
+}
 
 /* #region >>> GROSSANSICHT – Navigation */
+/* #region i^i + i^i016 */
 .photo-dialog__navigation {
   display: flex;
   align-items: center;
@@ -256,11 +312,12 @@ body {
   font-weight: 500;
   line-height: 16px;
   text-align: center;
-} /* #region i^i + i^i016 */
+}
 
-/* #region >>> # # # C E N T R A L   S I T E   S E T T I N G S #region >>> Bereich: Mobile Ansicht: ab 320 px sinnvoll nutzbar  # # # */
+/* #region >>> # # # MOBIL – Anpassungen bis 640 px # # # */
 
 /* #region >>> MOBILE – eigene Umschaltgrenze */
+/* #region i^i + i^i019 */
 @media (max-width: 640px) {
   :root {
     --page-gutter: clamp(20px, 8vw, 30px);
@@ -298,6 +355,10 @@ body {
     border-radius: 24px;
   }
 
+  .photo-dialog__header {
+    min-height: 60px;
+  }
+
   .photo-dialog__header h2 {
     font-size: 20px;
   }
@@ -314,6 +375,5 @@ body {
   .photo-dialog__navigation button {
     width: 48px;
     height: 48px;
-  } 
-} /* #region i^i + i^i019 */
-
+  }
+}
