@@ -126,7 +126,10 @@ function closePhoto() {
  * @param {MouseEvent} event - Klickereignis am Dialog.
  * @returns {void}
  */
+
 function handleDialogBackdropClick(event) {
+  if (event.target !== DIALOG) return;
+
   const RECT = DIALOG.getBoundingClientRect();
   const IS_OUTSIDE =
     event.clientX < RECT.left ||
