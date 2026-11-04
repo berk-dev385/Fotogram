@@ -119,6 +119,24 @@ function closePhoto() {
   DIALOG.close();
 }
 
+/* #region >>> DIALOG – Klick außerhalb erkennen */
+
+/**
+ * Schließt den Dialog bei Klick außerhalb seiner Grenzen.
+ * @param {MouseEvent} event - Klickereignis am Dialog.
+ * @returns {void}
+ */
+function handleDialogBackdropClick(event) {
+  const RECT = DIALOG.getBoundingClientRect();
+  const IS_OUTSIDE =
+    event.clientX < RECT.left ||
+    event.clientX > RECT.right ||
+    event.clientY < RECT.top ||
+    event.clientY > RECT.bottom;
+
+  if (IS_OUTSIDE) closePhoto();
+}
+
 /* #region >>> NAVIGATION – vorheriges und nächstes Foto */
 
 /* #region i^i + i^i018 */
@@ -154,6 +172,7 @@ function init() {
   CLOSE_BUTTON.addEventListener("click", closePhoto);
   PREVIOUS_BUTTON.addEventListener("click", showPreviousPhoto);
   NEXT_BUTTON.addEventListener("click", showNextPhoto);
+  DIALOG.addEventListener("click", handleDialogBackdropClick);
 }
 
 /* #region i^i + i^i028 */
